@@ -60,7 +60,7 @@ letmein.setOnClickListener(v -> {
             usermodel.setUsername(username);
              }
         else{
-            usermodel= new Usermodel(phonenumber,username, Timestamp.now());
+            usermodel= new Usermodel(username,phonenumber, Timestamp.now(),Firebaseutil.currentUserId());
 
         }
         Firebaseutil.currentUserDetails().set(usermodel).addOnCompleteListener(new OnCompleteListener<Void>() {
