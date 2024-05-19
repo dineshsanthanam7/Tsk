@@ -19,7 +19,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 
 import model.Usermodel;
 import utils.Firebaseutil;
-
 public class login_user extends AppCompatActivity {
 EditText usernameInput;
 ProgressBar progressBar;
