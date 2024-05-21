@@ -1,9 +1,13 @@
 package utils;
 
+import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.text.SimpleDateFormat;
+import java.util.List;
 
 public class Firebaseutil {
     public static String currentUserId(){
@@ -38,5 +42,21 @@ return FirebaseFirestore.getInstance().collection("users");
         else{
             return userId2+"_"+userId1;
         }
+    }
+    public static CollectionReference allChatroomCollectionReference(){
+        return FirebaseFirestore.getInstance().collection("chatrooms");
+    }
+    public static DocumentReference otherUserFromChatroom(List<String> userids){
+        if(userids.get(0).equals(currentUserId())){
+          return   allCollectionReference().document(userids.get(1));
+        }
+        else{
+            return   allCollectionReference().document(userids.get(0));
+        }
+
+
+    }
+    public static String timeSatmptoString(Timestamp timestamp){
+        return new SimpleDateFormat("HH:MM").format(timestamp.toDate());
     }
 }

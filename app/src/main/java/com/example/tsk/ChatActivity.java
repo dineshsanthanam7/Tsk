@@ -100,6 +100,7 @@ setupChatRecyclerView();
     void sendMessageToUser(String message){
         chateoomModel.setLastMessageSenderId(Firebaseutil.currentUserId());
         chateoomModel.setLastMessageTimestamp(Timestamp.now());
+chateoomModel.setLastMessage(message);
         Firebaseutil.getChatroomReference(chatroomID).set(chateoomModel);
 
         ChatMessageModel chatMessageModel=new ChatMessageModel(message,Firebaseutil.currentUserId(),Timestamp.now());

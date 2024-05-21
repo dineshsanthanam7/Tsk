@@ -10,6 +10,7 @@ public class ChateoomModel {
     List<String> userids;
     Timestamp lastMessageTimestamp;
     String lastMessageSenderId;
+    String lastMessage;
 
     public ChateoomModel() {
 
@@ -52,5 +53,13 @@ public class ChateoomModel {
 
     public void setLastMessageSenderId(String lastMessageSenderId) {
         this.lastMessageSenderId = lastMessageSenderId;
+    }
+
+    public String getLastMessage() {
+        return lastMessage;
+    }
+
+    public void setLastMessage(String lastMessage) {
+        this.lastMessage = lastMessage;
     }
 }
