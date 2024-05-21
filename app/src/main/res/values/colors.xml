@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="offwhite">#FAFAFA</color>
     <color name="circle">#FF5964</color>
+    <color name="chat_color_sender">#1E88E5</color>
+    <color name="chat_color_reciver">#7CB342</color>
 </resources>

@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,6 +30,7 @@ public class SearchUserRecyclerAdaptor extends FirestoreRecyclerAdapter<Usermode
 
     @Override
     protected void onBindViewHolder(@NonNull UsermodelViewHolder holder, int position, @NonNull Usermodel model) {
+       // Toast.makeText(context.getApplicationContext(), "layout55",Toast.LENGTH_SHORT).show();
         holder.username.setText(model.getUsername());
         holder.phonenumber.setText(model.getPhonenumber());
         if(model.getUserID().equals(Firebaseutil.currentUserId())){
